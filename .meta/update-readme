@@ -1,0 +1,34 @@
+#!/bin/bash
+set -euo pipefail
+
+function get_table_of_contents {
+    cat <(find . -type f -wholename './[^.]*/[^.]*.md') \
+        <(find . -type d -wholename './[^.]*') \
+        | sort \
+        | while read -r LINE; do
+        case $(tr -dc '/' <<< "$LINE" | wc -c) in
+            1) # Directory
+                NAME=$(cat "$LINE/.name")
+                if [ -z "$NAME" ]; then
+                    echo >&2 "Couldn't find \`$LINE/.name'"
+                    exit 1
+                fi
+                echo "### $NAME";;
+
+            2) # TIL entry
+                TITLE=$(head -n 1 "$LINE" | sed 's/^# *//')
+                MODIFIED=$(git log -1 --format="%as" -- "$LINE")
+                echo "- [$TITLE]($LINE) – modified $MODIFIED";;
+
+            *) echo >&2 "Error: could not parse line \`$LINE'";;
+        esac
+    done
+}
+export -f get_table_of_contents
+
+awk '
+BEGIN {p = 1}
+/^<!-- BEGIN:TOC -->$/ {print;system("bash -c get_table_of_contents");p=0}
+/^<!-- END:TOC -->$/   {p=1}
+p' "$1"
+
