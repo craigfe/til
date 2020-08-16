@@ -17,7 +17,7 @@ user | A message you actually care about
  --> | bad_connection has joined #channel
 ```
 
-These "channel operation" messages are build into the specification of IRC ([RFC
+These "channel operation" messages are part of the specification of IRC ([RFC
 1459][rfc-channel-operation]). Fortunately, Weechat has a number of built-in
 _filters_ for these messages (disabled by default). For instance, you can
 disable all channel activity messages with the following command:
