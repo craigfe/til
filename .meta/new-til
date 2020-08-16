@@ -1,0 +1,45 @@
+#!/bin/bash
+set -euo pipefail
+
+COLOR_CYAN="\033[96m"
+COLOR_RESET="\033[0m"
+
+KINDS=($(echo */ | tr -d '/' | sort))
+
+printf "Creating a new TIL post ...\n\nCurrent categories: {%s}\n\n" "$(echo "${KINDS[*]}" | tr " " ",")"
+
+printf "${COLOR_CYAN}KIND:${COLOR_RESET} "
+read -e -r KIND
+
+KIND=$(echo "$KIND" | tr '[:upper:]' '[:lower:]')
+
+if [ -z "$KIND" ]; then
+    echo >&2 "Must supply a non-empty category"
+    exit 1
+fi
+
+if [[ ! " ${KINDS[@]} " =~ " ${KIND} " ]]; then
+    printf "New kind passed! What should the real name of \`${KIND}' be? "
+    read -e -r KIND_NAME
+
+    mkdir "$KIND"
+    echo "$KIND_NAME" > "${KIND}/.name"
+fi
+
+printf "${COLOR_CYAN}NAME:${COLOR_RESET} "
+read -r NAME
+
+if [ -z "$NAME" ]; then
+    echo >&2 "Must supply a non-empty name"
+    exit 1
+fi
+
+FILENAME=$(printf "$NAME" |\
+	tr '[:upper:]' '[:lower:]' |\
+	tr -c '[:alnum:]' '-' |\
+	tr '[:space:]' '-' |\
+	tr -s '-')
+
+PATH="$KIND/$FILENAME.md"
+echo "# $NAME" > "$PATH"
+xdg-open "$PATH"

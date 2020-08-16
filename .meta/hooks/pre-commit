@@ -1,0 +1,2 @@
+#!/bin/sh
+.meta/update-readme README.md
