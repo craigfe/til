@@ -9,6 +9,8 @@ warrant a full [blog post](https://www.craigfe.io/#--articles).
 Inspired by [emillon/til](https://github.com/emillon/til).
 
 <!-- BEGIN:TOC -->
+### Git
+- [Move to the root of the current repository](./git/move-to-the-root-of-the-current-repository.md) – modified 2020-08-16
 ### IRC
 - [Hide channel operation messages](./irc/hide-channel-operation-messages.md) – modified 2020-08-16
 ### GNU/Linux
