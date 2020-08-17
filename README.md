@@ -15,6 +15,7 @@ Inspired by [emillon/til](https://github.com/emillon/til).
 - [Hide channel operation messages](./irc/hide-channel-operation-messages.md) – modified 2020-08-16
 ### GNU/Linux
 - [Managing dotfile symlinks with Stow](./linux/managing-dotfile-symlinks-with-stow.md) – modified 2020-08-16
+- [Pipe to and from the system clipboard](./linux/pipe-to-and-from-the-system-clipboard.md) – modified 2020-08-17
 ### OCaml
 - [Conjunctive type constraints on polymorphic variants](./ocaml/conjunctive-type-constraints-on-polymorphic-variants.md) – modified 2020-08-11
 - [Diffing two OCaml ASTs](./ocaml/diffing-two-ocaml-asts.md) – modified 2020-08-11
