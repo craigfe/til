@@ -16,6 +16,7 @@ Inspired by [emillon/til](https://github.com/emillon/til).
 ### IRC
 - [Hide channel operation messages](./irc/hide-channel-operation-messages.md) – modified 2020-08-16
 ### GNU/Linux
+- [Fuzzy-find in command history](./linux/fuzzy-find-in-command-history.md) – modified 2020-08-17
 - [Managing dotfile symlinks with Stow](./linux/managing-dotfile-symlinks-with-stow.md) – modified 2020-08-16
 - [Pipe to and from the system clipboard](./linux/pipe-to-and-from-the-system-clipboard.md) – modified 2020-08-17
 ### OCaml
