@@ -9,6 +9,8 @@ warrant a full [blog post](https://www.craigfe.io/#--articles).
 Inspired by [emillon/til](https://github.com/emillon/til).
 
 <!-- BEGIN:TOC -->
+### Emacs
+- [Make script files executable automatically](./emacs/make-script-files-executable-automatically.md) – modified 2020-08-17
 ### Git
 - [Move to the root of the current repository](./git/move-to-the-root-of-the-current-repository.md) – modified 2020-08-16
 ### IRC
