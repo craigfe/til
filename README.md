@@ -22,5 +22,6 @@ Inspired by [emillon/til](https://github.com/emillon/til).
 ### OCaml
 - [Conjunctive type constraints on polymorphic variants](./ocaml/conjunctive-type-constraints-on-polymorphic-variants.md) – modified 2020-08-11
 - [Diffing two OCaml ASTs](./ocaml/diffing-two-ocaml-asts.md) – modified 2020-08-11
+- [Vim editing mode for `utop`](./ocaml/vim-editing-mode-for-utop.md) – modified 2020-08-25
 <!-- END:TOC -->
 
